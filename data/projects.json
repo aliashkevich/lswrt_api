@@ -1,0 +1,38 @@
+[
+  {
+    "id": "2018-33",
+    "client_id": 1,
+    "title": "Lesewert 2018",
+    "summary": "Mit Lesewert haben wir eine Analyse-Methode entwickelt, die erstmals ein Live-Leser-Feedback bietet, das dem digitaler Medien ähnelt. Seit 2011 geben hunderte Abonnenten von Tageszeitungen wie der Sächsischen Zeitung oder von Magazinen wie DER SPIEGEL Feedback darüber, wie sie ihr Medium nutzen. Dazu erfassen sie bei allen gelesenen Texten mit einem Scanstift die Zeile, an der sie aufgehört haben zu lesen. Die Zeile wird via Lesewert-App an eine Datenbank übertragen. Die Redaktion erhält schließlich eine Live-Statistik für jeden einzelnen Artikel: Dieser Lesewert ähnelt einer detaillierten Einschaltquote.",
+    "start_date": "2018-01-01T10:30:00.587Z",
+    "end_date": "2018-12-21T18:00:00.806Z",
+    "participants": [4, 5]
+  },
+  {
+    "id": "2019-01",
+    "client_id": 2,
+    "title": "The New York Times",
+    "summary": "The New York Times is an American newspaper based in New York City with worldwide influence and readership. Founded in 1851, the paper has won 127 Pulitzer Prizes, more than any other newspaper.",
+    "start_date": "2019-02-01T13:41:39.587Z",
+    "end_date": "2019-06-29T13:42:02.806Z",
+    "participants": [2]
+  },
+  {
+    "id": "2019-02",
+    "client_id": 3,
+    "title": "BMW",
+    "summary": "Die Bayerische Motoren Werke Aktiengesellschaft ist die Muttergesellschaft der BMW Group, eines weltweit operierenden deutschen Automobil- und Motorradherstellers mit Sitz in München.",
+    "start_date": "2019-05-11T00:00:00.587Z",
+    "end_date": "2019-10-12T22:42:02.806Z",
+    "participants": [3]
+  },
+  {
+    "id": "2019-03",
+    "client_id": 4,
+    "title": "Wild Code School",
+    "summary": "Become a web developer by completing our full time training programme (5 months) or part time training programme (10 months) in web development.",
+    "start_date": "2019-05-21T13:41:39.587Z",
+    "end_date": "2019-08-19T13:42:02.806Z",
+    "participants": [7]
+  }
+]
