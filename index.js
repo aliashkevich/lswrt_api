@@ -12,8 +12,7 @@ const api_path = `/api/v1/`;
 
 app.get('/', (req, res) => {
   res.set({
-    'Access-Control-Allow-Origin':
-      'http://localhost:3000,http://localhost:3001,http://localhost:3002',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
     'Access-Control-Allow-Methods': '*',
   });
   res.sendFile(path.join(__dirname + '/index.html'));
@@ -21,8 +20,7 @@ app.get('/', (req, res) => {
 
 app.get(api_path + 'users', (req, res) => {
   res.set({
-    'Access-Control-Allow-Origin':
-      'http://localhost:3000,http://localhost:3001,http://localhost:3002',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
     'Access-Control-Allow-Methods': '*',
   });
   res.json({
@@ -32,8 +30,7 @@ app.get(api_path + 'users', (req, res) => {
 
 app.get(api_path + 'projects', (req, res) => {
   res.set({
-    'Access-Control-Allow-Origin':
-      'http://localhost:3000,http://localhost:3001,http://localhost:3002',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
     'Access-Control-Allow-Methods': '*',
   });
   res.json({
@@ -43,8 +40,7 @@ app.get(api_path + 'projects', (req, res) => {
 
 app.get(api_path + 'roles', (req, res) => {
   res.set({
-    'Access-Control-Allow-Origin':
-      'http://localhost:3000,http://localhost:3001,http://localhost:3002',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
     'Access-Control-Allow-Methods': '*',
   });
   res.json({
@@ -54,8 +50,7 @@ app.get(api_path + 'roles', (req, res) => {
 
 app.get(api_path + 'tasks', (req, res) => {
   res.set({
-    'Access-Control-Allow-Origin':
-      'http://localhost:3000,http://localhost:3001,http://localhost:3002',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
     'Access-Control-Allow-Methods': '*',
   });
   res.json({
@@ -65,8 +60,7 @@ app.get(api_path + 'tasks', (req, res) => {
 
 app.get(api_path + 'clients', (req, res) => {
   res.set({
-    'Access-Control-Allow-Origin':
-      'http://localhost:3000,http://localhost:3001,http://localhost:3002',
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
     'Access-Control-Allow-Methods': '*',
   });
   res.json({
