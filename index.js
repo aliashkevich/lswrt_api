@@ -8,61 +8,45 @@ const clients = require('./data/clients.json');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 3000;
-const api_path = `/api/v1/`;
+const api_path = '/api/v1/';
 
-app.get('/', (req, res) => {
+app.get('/*', function(req, res, next) {
   res.set({
-    'Access-Control-Allow-Origin': 'http://localhost:3000',
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': '*',
   });
+  next();
+});
+
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get(api_path + 'users', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Methods': '*',
-  });
   res.json({
     users,
   });
 });
 
 app.get(api_path + 'projects', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Methods': '*',
-  });
   res.json({
     projects,
   });
 });
 
 app.get(api_path + 'roles', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Methods': '*',
-  });
   res.json({
     roles,
   });
 });
 
 app.get(api_path + 'tasks', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Methods': '*',
-  });
   res.json({
     tasks,
   });
 });
 
 app.get(api_path + 'clients', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Origin': 'http://localhost:3000',
-    'Access-Control-Allow-Methods': '*',
-  });
   res.json({
     clients,
   });
