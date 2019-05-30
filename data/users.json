@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Administrator",
+    "email": "admin@gmail.com",
+    "password": "insecure_password_at_all",
+    "image": "https://i.pravatar.cc/300",
+    "client_id": null,
+    "project_id": null,
+    "role_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Mr. Bin",
+    "email": "mr_bin@gmail.com",
+    "password": "qwerty12345",
+    "image": "https://i.pravatar.cc/300",
+    "client_id": 2,
+    "project_id": "2019-01",
+    "role_id": 3
+  },
+  {
+    "id": 3,
+    "name": "Anna Korenina",
+    "email": "a.kor@gmail.com",
+    "password": "qwerty12345",
+    "image": "https://i.pravatar.cc/300",
+    "client_id": 4,
+    "project_id": "2019-02",
+    "role_id": 2
+  },
+  {
+    "id": 4,
+    "name": "Chak",
+    "email": "j.smith@gmail.com",
+    "password": "qwerty12345",
+    "image": "https://i.pravatar.cc/300",
+    "client_id": 1,
+    "project_id": "2018-33",
+    "role_id": 4
+  },
+  {
+    "id": 5,
+    "name": "Thomas Schmidt",
+    "email": "j.smith@gmail.com",
+    "password": "qwerty12345",
+    "image": "https://i.pravatar.cc/300",
+    "client_id": 1,
+    "project_id": "2018-33",
+    "role_id": null
+  },
+  {
+    "id": 6,
+    "name": "Basic User",
+    "email": "abc0923884@gmail.com",
+    "password": "qwerty12345",
+    "image": null,
+    "client_id": null,
+    "project_id": null,
+    "role_id": null
+  },
+  {
+    "id": 7,
+    "name": "John Smith",
+    "email": "j.smith@gmail.com",
+    "password": "qwerty12345",
+    "image": "https://i.pravatar.cc/300",
+    "client_id": 1,
+    "project_id": "2019-03",
+    "role_id": null
+  }
+]

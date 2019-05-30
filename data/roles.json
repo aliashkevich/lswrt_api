@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "administrator"
+  },
+  {
+    "id": 2,
+    "name": "project_manager"
+  },
+  {
+    "id": 3,
+    "name": "project_member"
+  },
+  {
+    "id": 4,
+    "name": "client_manager"
+  }
+]

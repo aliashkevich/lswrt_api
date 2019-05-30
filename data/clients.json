@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Lesewer",
+    "initials": "L",
+    "logo": "https://i.pravatar.cc/300",
+    "contact information": {
+      "email": "lesewert@gmail.de",
+      "number": "+491722349564"
+    }
+  },
+  {
+    "id": 2,
+    "name": "The New York Times",
+    "initials": "NYT",
+    "logo": "https://i.pravatar.cc/300",
+    "contact information": {
+      "email": "ny_times@gmail.com",
+      "number": "+491722889564"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Bayerische Motoren Werke AG",
+    "initials": "BMW",
+    "logo": "https://i.pravatar.cc/300",
+    "contact information": {
+      "email": "bmw@gmail.de",
+      "number": "+491342349511"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Wild Code School",
+    "initials": "WCS",
+    "logo": "https://i.pravatar.cc/300",
+    "contact information": {
+      "email": "wcs@gmail.com",
+      "number": "+491722349333"
+    }
+  }
+]
