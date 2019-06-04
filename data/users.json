@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "Chak",
-    "email": "j.smith@gmail.com",
+    "email": "chak.nor@gmail.com",
     "password": "qwaszx",
     "image": "https://i.pravatar.cc/300",
     "client_id": 1,
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Thomas Schmidt",
-    "email": "j.smith@gmail.com",
+    "email": "t.schmidt@gmail.com",
     "password": "sfjns342",
     "image": "https://i.pravatar.cc/300",
     "client_id": 1,
