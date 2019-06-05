@@ -19,8 +19,19 @@ router.get('/:id', function(req, res, next) {
 
 router.post('/', (req, res, next) => {
   const clientData = req.body;
-  console.log(req.body);
   clients.push(clientData);
+  res.json({clients});
+});
+
+router.delete('/:id', (req, res, next) => {
+  var client = clients.find(client => client.id == req.params.id);
+  var index = clients.indexOf(client);
+  if (index == -1) {
+    res.send(`Client '${req.params.id}' doesn't exist`);
+  } else {
+    clients.splice(index, 1);
+    res.json({clients});
+  }
 });
 
 module.exports = router;
