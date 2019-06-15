@@ -17,4 +17,10 @@ router.get('/:id', function(req, res, next) {
   }
 });
 
+router.post('/', (req, res, next) => {
+  const projectData = req.body;
+  projects.push(projectData);
+  res.json({projects});
+});
+
 module.exports = router;
