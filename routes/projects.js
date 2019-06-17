@@ -17,4 +17,21 @@ router.get('/:id', function(req, res, next) {
   }
 });
 
+router.post('/', (req, res, next) => {
+  const projectData = req.body;
+  projects.push(projectData);
+  res.json({projects});
+});
+
+router.delete('/:id', (req, res, next) => {
+  var project = projects.find(project => project.id == req.params.id);
+  var index = projects.indexOf(project);
+  if (index == -1) {
+    res.send(`Project '${req.params.id}' doesn't exist`);
+  } else {
+    projects.splice(index, 1);
+    res.json({projects});
+  }
+});
+
 module.exports = router;
