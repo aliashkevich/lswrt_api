@@ -18,7 +18,21 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-  const projectData = req.body;
+  const d = new Date();
+  const lastProject = projects[projects.length - 1];
+  const idNum = lastProject.id.split('-');
+  const idIncrement = parseInt(idNum[1]) + 1;
+  const idCheck = idIncrement < 10 ? `0${idIncrement}` : idIncrement;
+  const newId = d.getFullYear() + '-' + idCheck;
+  const projectData = {
+    id: newId,
+    client_id: req.body.client_id,
+    title: req.body.title,
+    summary: req.body.summary,
+    start_date: req.body.start_date,
+    end_date: req.body.end_date,
+    participants: req.body.participants,
+  };
   projects.push(projectData);
   res.json({projects});
 });
