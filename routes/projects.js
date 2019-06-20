@@ -18,14 +18,20 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-  const d = new Date();
-  const lastProject = projects[projects.length - 1];
-  const idNum = lastProject.id.split('-');
-  const idIncrement = parseInt(idNum[1]) + 1;
-  const idCheck = idIncrement < 10 ? `0${idIncrement}` : idIncrement;
-  const newId = d.getFullYear() + '-' + idCheck;
+  const lastProjectId = projects[projects.length - 1].id;
+  const lastProjectIdYear = lastProjectId.split('-')[0];
+  const lastProjectIdNum = lastProjectId.split('-')[1];
+  const currentYear = new Date().getFullYear().toString();
+  let newProjectId;
+  if (lastProjectIdYear === currentYear) {
+    const idIncrement = parseInt(lastProjectIdNum) + 1;
+    const newProjectIdNum = idIncrement < 10 ? `0${idIncrement}` : idIncrement;
+    newProjectId = currentYear + '-' + newProjectIdNum;
+  } else {
+    newProjectId = `${currentYear}-01`;
+  }
   const projectData = {
-    id: newId,
+    id: newProjectId,
     client_id: req.body.client_id,
     title: req.body.title,
     summary: req.body.summary,
