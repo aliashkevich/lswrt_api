@@ -26,6 +26,14 @@ app.get('/*', function(req, res, next) {
   next();
 });
 
+app.post('/*', function(req, res, next) {
+  res.set({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': '*',
+  });
+  next();
+});
+
 app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
