@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const clientsRouter = require('./routes/clients');
 const usersRouter = require('./routes/users');
 const tasksRouter = require('./routes/tasks');
@@ -18,23 +19,7 @@ app.use(
   }),
 );
 
-app.get('/*', function(req, res, next) {
-  res.set({
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': '*',
-  });
-  next();
-});
-
-
-app.delete('/*', function(req, res, next) {
-  res.set({
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': '*',
-  });
-  next();
-});
-
+app.use(cors());
 
 app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname + '/index.html'));
