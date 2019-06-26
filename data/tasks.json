@@ -2,7 +2,7 @@
   {
     "id": "2018-33-01",
     "project_id": "2018-33",
-    "status": "finished",
+    "status": "done",
     "title": "Create Backlog",
     "summary": "Create backlog for Lesewert sprint 12, move project management from paper to app",
     "description": "Your backlog is a list of tasks that represents outstanding work in a project. Usually, a project would have issues in the backlog, and you can add these issues to a sprint so your team can work on them. Since Teams in Space is a new project, you won't have issues on your backlog. Let's create some work for your team.",
@@ -72,7 +72,7 @@
   {
     "id": "2019-03-01",
     "project_id": "2019-03",
-    "status": "postponed",
+    "status": "done",
     "title": "Update packages",
     "summary": "Update packages to latest version",
     "description": "Update packages including router",
