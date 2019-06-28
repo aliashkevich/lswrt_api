@@ -24,14 +24,14 @@ router.post('/', (req, res, next) => {
 });
 
 router.put('/:id', (req, res, next) => {
-  const newData = req.body;
+  const editedTask = req.body;
   var task = tasks.find(task => task.id == req.params.id);
   var index = tasks.indexOf(task);
   if (index == -1) {
     res.send(`Task '${req.params.id}' doesn't exist`);
   } else {
-    newData.status
-      ? (tasks[index].status = newData.status)
+    editedTask.status
+      ? (tasks[index].status = editedTask.status)
       : tasks[index].status;
   }
   res.json({tasks});
