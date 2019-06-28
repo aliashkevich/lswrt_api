@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const clients = require('../data/clients.json');
+const formidable = require('formidable');
 
 router.get('/', function(req, res, next) {
   res.json({
@@ -18,7 +19,16 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-  const clientData = req.body;
+  const newClientId = clients[clients.length - 1].id + 1;
+  const clientData = {
+    id: newClientId,
+    name: req.body.name,
+    initials: req.body.initials,
+    contact_information: {
+      email: req.body.contact_information.email,
+      number: req.body.contact_information.number,
+    },
+  };
   clients.push(clientData);
   res.json({clients});
 });
