@@ -24,10 +24,7 @@ router.post('/', (req, res, next) => {
     id: newClientId,
     name: req.body.name,
     initials: req.body.initials,
-    contact_information: {
-      email: req.body.contact_information.email,
-      number: req.body.contact_information.number,
-    },
+    contact_information: req.body.contact_information,
   };
   clients.push(clientData);
   res.json({clients});
