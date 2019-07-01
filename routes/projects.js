@@ -32,12 +32,7 @@ router.post('/', (req, res, next) => {
   }
   const projectData = {
     id: newProjectId,
-    client_id: req.body.client_id,
-    title: req.body.title,
-    summary: req.body.summary,
-    start_date: req.body.start_date,
-    end_date: req.body.end_date,
-    participants: req.body.participants,
+    body: req.body,
   };
   projects.push(projectData);
   res.json({projects});
