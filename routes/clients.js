@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const clients = require('../data/clients.json');
-const formidable = require('formidable');
 
 router.get('/', function(req, res, next) {
   res.json({
