@@ -50,17 +50,17 @@ router.put('/:id', (req, res, next) => {
     return project.id == requestId;
   })[0];
 
-  const index = projects.indexOf(project);
-
-  const keys = Object.keys(req.body);
-
-  keys.forEach(key => {
-    project[key] = req.body[key];
-  });
-
-  projects[index] = project;
-
-  res.json(projects[index]);
+  if (project === undefined) {
+    res.send(`There is no project with id '${requestId}'`).status(404);
+  } else {
+    const index = projects.indexOf(project);
+    const keys = Object.keys(req.body);
+    keys.forEach(key => {
+      project[key] = req.body[key];
+    });
+    projects[index] = project;
+    res.json(projects[index]);
+  }
 });
 
 router.delete('/:id', (req, res, next) => {
