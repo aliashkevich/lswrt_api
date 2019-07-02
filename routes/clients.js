@@ -18,7 +18,13 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-  const clientData = req.body;
+  const newClientId = clients[clients.length - 1].id + 1;
+  const clientData = {
+    id: newClientId,
+    name: req.body.name,
+    initials: req.body.initials,
+    contact_information: req.body.contact_information,
+  };
   clients.push(clientData);
   res.json({clients});
 });
