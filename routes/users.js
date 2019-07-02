@@ -17,4 +17,15 @@ router.get('/:id', function(req, res, next) {
   }
 });
 
+router.delete('/:id', (req, res, next) => {
+  var user = users.find(user => user.id == req.params.id);
+  var index = users.indexOf(user);
+  if (index === -1) {
+    res.send(`User '${req.params.id}' doesn't exist`);
+  } else {
+    users.splice(index, 1);
+    res.json({users});
+  }
+});
+
 module.exports = router;
