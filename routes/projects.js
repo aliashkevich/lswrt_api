@@ -43,6 +43,26 @@ router.post('/', (req, res, next) => {
   res.json({projects});
 });
 
+router.put('/:id', (req, res, next) => {
+  const requestId = req.params.id;
+
+  let project = projects.filter(project => {
+    return project.id == requestId;
+  })[0];
+
+  const index = projects.indexOf(project);
+
+  const keys = Object.keys(req.body);
+
+  keys.forEach(key => {
+    project[key] = req.body[key];
+  });
+
+  projects[index] = project;
+
+  res.json(projects[index]);
+});
+
 router.delete('/:id', (req, res, next) => {
   var project = projects.find(project => project.id == req.params.id);
   var index = projects.indexOf(project);
