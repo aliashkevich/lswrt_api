@@ -10,7 +10,7 @@
     "start_date": "2018-01-01T10:30:00.587Z",
     "due_date": "2018-02-01T18:00:00.806Z",
     "estimation": "160 hours",
-    "assignee": null
+    "user_id": 4
   },
   {
     "id": "2018-33-02",
@@ -28,7 +28,7 @@
     "start_date": "2018-03-01T10:30:00.587Z",
     "due_date": "2019-04-01T18:00:00.806Z",
     "estimation": "160 hours",
-    "assignee": null
+    "user_id": 5
   },
   {
     "id": "2019-01-01",
@@ -41,7 +41,7 @@
     "start_date": "2019-01-01T10:30:00.587Z",
     "due_date": "2019-01-12T18:00:00.806Z",
     "estimation": "78 hours",
-    "assignee": null
+    "user_id": 2
   },
   {
     "id": "2019-01-02",
@@ -54,7 +54,7 @@
     "start_date": "2019-04-01T10:30:00.587Z",
     "due_date": "2019-06-01T18:00:00.806Z",
     "estimation": "120 hours",
-    "assignee": null
+    "user_id": 2
   },
   {
     "id": "2019-02-01",
@@ -67,7 +67,7 @@
     "start_date": "2019-05-29T10:30:00.587Z",
     "due_date": "2019-09-01T18:00:00.806Z",
     "estimation": "240 hours",
-    "assignee": null
+    "user_id": 3
   },
   {
     "id": "2019-03-01",
@@ -80,6 +80,6 @@
     "start_date": "2019-03-01T10:30:00.587Z",
     "due_date": "2019-05-01T18:00:00.806Z",
     "estimation": "8 hours",
-    "assignee": null
+    "user_id": 7
   }
 ]
