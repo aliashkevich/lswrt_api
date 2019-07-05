@@ -32,11 +32,11 @@ router.post('/', (req, res, next) => {
   }
   const projectData = {
     id: newProjectId,
-    client_id: req.body.client_id,
+    clientId: req.body.clientId,
     title: req.body.title,
     summary: req.body.summary,
-    start_date: req.body.start_date,
-    end_date: req.body.end_date,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
     participants: req.body.participants,
   };
   projects.push(projectData);
