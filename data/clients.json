@@ -4,7 +4,7 @@
     "name": "Lesewert",
     "initials": "L",
     "logo": "https://i.pravatar.cc/300",
-    "contact_information": {
+    "contactInformation": {
       "email": "lesewert@gmail.de",
       "number": "+491722349564"
     }
@@ -14,7 +14,7 @@
     "name": "The New York Times",
     "initials": "NYT",
     "logo": "https://i.pravatar.cc/300",
-    "contact_information": {
+    "contactInformation": {
       "email": "ny_times@gmail.com",
       "number": "+491722889564"
     }
@@ -24,7 +24,7 @@
     "name": "Bayerische Motoren Werke AG",
     "initials": "BMW",
     "logo": "https://i.pravatar.cc/300",
-    "contact_information": {
+    "contactInformation": {
       "email": "bmw@gmail.de",
       "number": "+491342349511"
     }
@@ -34,7 +34,7 @@
     "name": "Wild Code School",
     "initials": "WCS",
     "logo": "https://i.pravatar.cc/300",
-    "contact_information": {
+    "contactInformation": {
       "email": "wcs@gmail.com",
       "number": "+491722349333"
     }
