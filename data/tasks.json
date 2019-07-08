@@ -1,20 +1,20 @@
 [
   {
     "id": "2018-33-01",
-    "project_id": "2018-33",
-    "status": "finished",
+    "projectId": "2018-33",
+    "status": "done",
     "title": "Create Backlog",
     "summary": "Create backlog for Lesewert sprint 12, move project management from paper to app",
     "description": "Your backlog is a list of tasks that represents outstanding work in a project. Usually, a project would have issues in the backlog, and you can add these issues to a sprint so your team can work on them. Since Teams in Space is a new project, you won't have issues on your backlog. Let's create some work for your team.",
     "checklist": ["create tasks", "assigne people", "prepare accounts"],
-    "start_date": "2018-01-01T10:30:00.587Z",
-    "due_date": "2018-02-01T18:00:00.806Z",
+    "startDate": "2018-01-01T10:30:00.587Z",
+    "endDate": "2018-02-01T18:00:00.806Z",
     "estimation": "160 hours",
-    "assignee": null
+    "userId": 4
   },
   {
     "id": "2018-33-02",
-    "project_id": "2018-33",
+    "projectId": "2018-33",
     "status": "finished",
     "title": "Create documentation",
     "summary": "Create documentation for Lesewert sprint 12",
@@ -25,61 +25,61 @@
       "write instructions",
       "get approves"
     ],
-    "start_date": "2018-03-01T10:30:00.587Z",
-    "due_date": "2019-04-01T18:00:00.806Z",
+    "startDate": "2018-03-01T10:30:00.587Z",
+    "endDate": "2019-04-01T18:00:00.806Z",
     "estimation": "160 hours",
-    "assignee": null
+    "userId": 5
   },
   {
     "id": "2019-01-01",
-    "project_id": "2019-01",
+    "projectId": "2019-01",
     "status": "finished",
     "title": "Modify prototype",
     "summary": "Modify prototype in terms of new requriments",
     "description": "Update prototype. A prototype is an early sample, model, or release of a product built to test a concept or process or to act as a thing to be replicated or learned from. It is a term used in a variety of contexts, including semantics, design, electronics, and software programming.",
     "checklist": ["update prototype"],
-    "start_date": "2019-01-01T10:30:00.587Z",
-    "due_date": "2019-01-12T18:00:00.806Z",
+    "startDate": "2019-01-01T10:30:00.587Z",
+    "endDate": "2019-01-12T18:00:00.806Z",
     "estimation": "78 hours",
-    "assignee": null
+    "userId": 2
   },
   {
     "id": "2019-01-02",
-    "project_id": "2019-01",
+    "projectId": "2019-01",
     "status": "new",
     "title": "Prepare preentstion",
     "summary": "Prepare preentstion",
     "description": "Prepare preentstion for conference 02.07.19",
     "checklist": ["find PowerPint template", "got vector graphic"],
-    "start_date": "2019-04-01T10:30:00.587Z",
-    "due_date": "2019-06-01T18:00:00.806Z",
+    "startDate": "2019-04-01T10:30:00.587Z",
+    "endDate": "2019-06-01T18:00:00.806Z",
     "estimation": "120 hours",
-    "assignee": null
+    "userId": 2
   },
   {
     "id": "2019-02-01",
-    "project_id": "2019-02",
+    "projectId": "2019-02",
     "status": "new",
     "title": "Dashboard",
     "summary": "Implement dashboard",
     "description": "See description in attached document.",
     "checklist": [""],
-    "start_date": "2019-05-29T10:30:00.587Z",
-    "due_date": "2019-09-01T18:00:00.806Z",
+    "startDate": "2019-05-29T10:30:00.587Z",
+    "endDate": "2019-09-01T18:00:00.806Z",
     "estimation": "240 hours",
-    "assignee": null
+    "userId": 3
   },
   {
     "id": "2019-03-01",
-    "project_id": "2019-03",
-    "status": "postponed",
+    "projectId": "2019-03",
+    "status": "done",
     "title": "Update packages",
     "summary": "Update packages to latest version",
     "description": "Update packages including router",
     "checklist": ["update packages", "checl tests"],
-    "start_date": "2019-03-01T10:30:00.587Z",
-    "due_date": "2019-05-01T18:00:00.806Z",
+    "startDate": "2019-03-01T10:30:00.587Z",
+    "endDate": "2019-05-01T18:00:00.806Z",
     "estimation": "8 hours",
-    "assignee": null
+    "userId": 7
   }
 ]
