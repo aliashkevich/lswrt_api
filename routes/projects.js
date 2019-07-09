@@ -18,9 +18,6 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-<<<<<<< HEAD
-  const projectData = req.body;
-=======
   const lastProjectId = projects[projects.length - 1].id;
   const lastProjectIdYear = lastProjectId.split('-')[0];
   const lastProjectIdNum = lastProjectId.split('-')[1];
@@ -42,7 +39,6 @@ router.post('/', (req, res, next) => {
     endDate: req.body.endDate,
     participants: req.body.participants,
   };
->>>>>>> 4638ea1670aedf471866550a095d76145a04ccf0
   projects.push(projectData);
   res.json({projects});
 });
