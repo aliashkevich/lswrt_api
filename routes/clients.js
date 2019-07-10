@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const clients = require('../data/clients.json');
+const projects = require('../data/projects.json');
+const users = require('../data/users.json');
 
 router.get('/', function(req, res, next) {
   res.json({
@@ -24,6 +26,7 @@ router.post('/', (req, res, next) => {
     name: req.body.name,
     initials: req.body.initials,
     contactInformation: req.body.contactInformation,
+    logo: req.body.logo,
   };
   clients.push(clientData);
   res.json({clients});
@@ -36,6 +39,12 @@ router.delete('/:id', (req, res, next) => {
     res.send(`Client '${req.params.id}' doesn't exist`);
   } else {
     clients.splice(index, 1);
+    users.forEach(function(user) {
+      if (user.clientId === parseInt(req.params.id)) user.clientId = null;
+    });
+    projects.forEach(function(project) {
+      if (project.clientId === parseInt(req.params.id)) project.clientId = null;
+    });
     res.json({clients});
   }
 });
