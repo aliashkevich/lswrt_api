@@ -49,4 +49,17 @@ router.delete('/:id', (req, res, next) => {
   }
 });
 
+router.put('/:id', (req, res) => {
+  const requestId = req.params.id;
+  const client = clients.find(client => client.id == req.params.id);
+  client.name = req.body.name;
+  client.initials = req.body.initials;
+  client.contactInformation = req.body.contactInformation;
+  if (client === undefined) {
+    res.send(`There is no client with id '${requestId}'`).status(404);
+  } else {
+    res.send(client);
+  }
+});
+
 module.exports = router;

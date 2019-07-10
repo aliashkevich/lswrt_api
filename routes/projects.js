@@ -69,7 +69,7 @@ router.delete('/:id', (req, res, next) => {
   var project = projects.find(project => project.id == req.params.id);
   var index = projects.indexOf(project);
   if (index == -1) {
-    res.status(404).send({message: `Project '${req.params.id}' doesn't exist`});
+    res.send(`Project '${req.params.id}' doesn't exist`);
   } else {
     projects.splice(index, 1);
     users.forEach(function(user) {
