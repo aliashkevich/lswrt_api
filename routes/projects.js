@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const projects = require('../data/projects.json');
+const users = require('../data/users.json');
+var tasks = require('../data/tasks.json');
 
 router.get('/', function(req, res, next) {
   res.json({
@@ -67,9 +69,18 @@ router.delete('/:id', (req, res, next) => {
   var project = projects.find(project => project.id == req.params.id);
   var index = projects.indexOf(project);
   if (index == -1) {
-    res.status(404).send({message: `Project '${req.params.id}' doesn't exist`});
+    res.send(`Project '${req.params.id}' doesn't exist`);
   } else {
     projects.splice(index, 1);
+    users.forEach(function(user) {
+      if (user.projectId === req.params.id) user.projectId = null;
+    });
+    const tasksToDelete = tasks.filter(
+      task => task.projectId === req.params.id,
+    );
+    tasksToDelete.forEach(function(taskToDelete) {
+      tasks.splice(tasks.indexOf(taskToDelete), 1);
+    });
     res.send({message: `Project '${req.params.id}' successfully deleted`});
   }
 });

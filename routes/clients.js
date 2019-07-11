@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const clients = require('../data/clients.json');
+const projects = require('../data/projects.json');
+const users = require('../data/users.json');
 
 router.get('/', function(req, res, next) {
   res.json({
@@ -24,6 +26,7 @@ router.post('/', (req, res, next) => {
     name: req.body.name,
     initials: req.body.initials,
     contactInformation: req.body.contactInformation,
+    logo: req.body.logo,
   };
   clients.push(clientData);
   res.json({clients});
@@ -36,7 +39,26 @@ router.delete('/:id', (req, res, next) => {
     res.send(`Client '${req.params.id}' doesn't exist`);
   } else {
     clients.splice(index, 1);
+    users.forEach(function(user) {
+      if (user.clientId === parseInt(req.params.id)) user.clientId = null;
+    });
+    projects.forEach(function(project) {
+      if (project.clientId === parseInt(req.params.id)) project.clientId = null;
+    });
     res.json({clients});
+  }
+});
+
+router.put('/:id', (req, res) => {
+  const requestId = req.params.id;
+  const client = clients.find(client => client.id == req.params.id);
+  client.name = req.body.name;
+  client.initials = req.body.initials;
+  client.contactInformation = req.body.contactInformation;
+  if (client === undefined) {
+    res.send(`There is no client with id '${requestId}'`).status(404);
+  } else {
+    res.send(client);
   }
 });
 
