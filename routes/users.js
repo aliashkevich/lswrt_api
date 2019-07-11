@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const users = require('../data/users.json');
+const tasks = require('../data/tasks.json');
+const projects = require('../data/projects.json');
 
 router.get('/', function(req, res, next) {
   res.json({
@@ -24,6 +26,16 @@ router.delete('/:id', (req, res, next) => {
     res.send(`User '${req.params.id}' doesn't exist`);
   } else {
     users.splice(index, 1);
+    tasks.forEach(function(task) {
+      if (task.userId === req.params.id) task.userId = null;
+    });
+    projects.forEach(function(project) {
+      const userId = parseInt(req.params.id);
+      if (project.participants.includes(userId)) {
+        var index = project.participants.indexOf(userId);
+        project.participants.splice(index, 1);
+      }
+    });
     res.json({users});
   }
 });
