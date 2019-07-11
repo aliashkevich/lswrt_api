@@ -39,6 +39,7 @@ router.post('/', (req, res, next) => {
     startDate: req.body.startDate,
     endDate: req.body.endDate,
     assignee: req.body.assignee,
+    status: req.body.status,
   };
   tasks.push(taskData);
   res.json({tasks});
