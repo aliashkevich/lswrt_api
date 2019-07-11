@@ -18,7 +18,28 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-  const taskData = req.body;
+  const projectId = req.body.projectId;
+  const numOfTasks = tasks.filter(task => task.projectId == projectId).length;
+  let newTaskId;
+  if (numOfTasks > 0) {
+    if (numOfTasks < 10) {
+      newTaskId = projectId + '-0' + parseInt(numOfTask + 1);
+    } else if (numOfTasks > 10) {
+      newTaskId = projectId + '-' + parseInt(numOfTask + 1);
+    }
+  }
+  if (numOfTasks == 0) {
+    newTaskId = projectId + '-' + '01';
+  }
+  const taskData = {
+    id: newTaskId,
+    projectId: projectId,
+    title: req.body.title,
+    summary: req.body.summary,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    assignee: req.body.assignee,
+  };
   tasks.push(taskData);
   res.json({tasks});
 });
