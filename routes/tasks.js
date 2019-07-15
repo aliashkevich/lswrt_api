@@ -21,16 +21,18 @@ router.post('/', (req, res, next) => {
   const projectId = req.body.projectId;
   const numOfTasks = tasks.filter(task => task.projectId == projectId).length;
   let newTaskId;
-  if (numOfTasks > 0) {
-    if (numOfTasks < 10) {
-      newTaskId = projectId + '-0' + parseInt(numOfTask + 1);
-    } else if (numOfTasks > 10) {
-      newTaskId = projectId + '-' + parseInt(numOfTask + 1);
-    }
-  }
+  console.log(numOfTasks);
   if (numOfTasks == 0) {
     newTaskId = projectId + '-' + '01';
+  } else {
+    let nextNum = numOfTasks + 1;
+    if (numOfTasks < 10) {
+      newTaskId = projectId + '-0' + parseInt(nextNum);
+    } else {
+      newTaskId = projectId + '-' + parseInt(nextNum);
+    }
   }
+
   const taskData = {
     id: newTaskId,
     projectId: projectId,
@@ -38,9 +40,10 @@ router.post('/', (req, res, next) => {
     summary: req.body.summary,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
-    assignee: req.body.assignee,
+    userId: req.body.assignee,
     status: req.body.status,
   };
+
   tasks.push(taskData);
   res.json({tasks});
 });
