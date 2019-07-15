@@ -21,7 +21,6 @@ router.post('/', (req, res, next) => {
   const projectId = req.body.projectId;
   const numOfTasks = tasks.filter(task => task.projectId == projectId).length;
   let newTaskId;
-  console.log(numOfTasks);
   if (numOfTasks == 0) {
     newTaskId = projectId + '-' + '01';
   } else {
