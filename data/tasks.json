@@ -9,7 +9,7 @@
     "checklist": ["create tasks", "assigne people", "prepare accounts"],
     "startDate": "2018-01-01T10:30:00.587Z",
     "endDate": "2018-02-01T18:00:00.806Z",
-    "estimation": "160 hours",
+    "estimation": "160",
     "userId": 4
   },
   {
@@ -27,7 +27,7 @@
     ],
     "startDate": "2018-03-01T10:30:00.587Z",
     "endDate": "2019-04-01T18:00:00.806Z",
-    "estimation": "160 hours",
+    "estimation": "160",
     "userId": 5
   },
   {
@@ -40,7 +40,7 @@
     "checklist": ["update prototype"],
     "startDate": "2019-01-01T10:30:00.587Z",
     "endDate": "2019-01-12T18:00:00.806Z",
-    "estimation": "78 hours",
+    "estimation": "78",
     "userId": 2
   },
   {
@@ -53,7 +53,7 @@
     "checklist": ["find PowerPint template", "got vector graphic"],
     "startDate": "2019-04-01T10:30:00.587Z",
     "endDate": "2019-06-01T18:00:00.806Z",
-    "estimation": "120 hours",
+    "estimation": "120",
     "userId": 2
   },
   {
@@ -66,7 +66,7 @@
     "checklist": [""],
     "startDate": "2019-05-29T10:30:00.587Z",
     "endDate": "2019-09-01T18:00:00.806Z",
-    "estimation": "240 hours",
+    "estimation": "240",
     "userId": 3
   },
   {
@@ -79,7 +79,7 @@
     "checklist": ["update packages", "checl tests"],
     "startDate": "2019-03-01T10:30:00.587Z",
     "endDate": "2019-05-01T18:00:00.806Z",
-    "estimation": "8 hours",
+    "estimation": "8",
     "userId": 7
   }
 ]
