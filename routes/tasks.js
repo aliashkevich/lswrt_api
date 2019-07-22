@@ -42,7 +42,7 @@ router.post('/', (req, res, next) => {
     startDate: req.body.startDate,
     endDate: req.body.endDate,
     estimation: req.body.estimation,
-    userId: req.body.assignee,
+    userId: req.body.userId,
   };
 
   tasks.push(taskData);
@@ -59,8 +59,12 @@ router.put('/:id', (req, res, next) => {
     editedTask.status
       ? (tasks[index].status = editedTask.status)
       : tasks[index].status;
+    const keys = Object.keys(req.body);
+    keys.forEach(key => {
+      task[key] = req.body[key];
+    });
   }
-  res.json({tasks});
+  res.json(tasks[index]);
 });
 
 router.delete('/:id', (req, res, next) => {
