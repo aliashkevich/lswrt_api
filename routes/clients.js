@@ -3,6 +3,7 @@ const router = express.Router();
 const clients = require('../data/clients.json');
 const projects = require('../data/projects.json');
 const users = require('../data/users.json');
+const passport = require('./auth/passport');
 
 router.get('/', function(req, res, next) {
   res.json({
@@ -32,22 +33,27 @@ router.post('/', (req, res, next) => {
   res.json({clients});
 });
 
-router.delete('/:id', (req, res, next) => {
-  var client = clients.find(client => client.id == req.params.id);
-  var index = clients.indexOf(client);
-  if (index == -1) {
-    res.send(`Client '${req.params.id}' doesn't exist`);
-  } else {
-    clients.splice(index, 1);
-    users.forEach(function(user) {
-      if (user.clientId === parseInt(req.params.id)) user.clientId = null;
-    });
-    projects.forEach(function(project) {
-      if (project.clientId === parseInt(req.params.id)) project.clientId = null;
-    });
-    res.json({clients});
-  }
-});
+router.delete(
+  '/:id',
+  passport.authenticate('jwt', {session: false}),
+  (req, res, next) => {
+    var client = clients.find(client => client.id == req.params.id);
+    var index = clients.indexOf(client);
+    if (index == -1) {
+      res.send(`Client '${req.params.id}' doesn't exist`);
+    } else {
+      clients.splice(index, 1);
+      users.forEach(function(user) {
+        if (user.clientId === parseInt(req.params.id)) user.clientId = null;
+      });
+      projects.forEach(function(project) {
+        if (project.clientId === parseInt(req.params.id))
+          project.clientId = null;
+      });
+      res.json({clients});
+    }
+  },
+);
 
 router.put('/:id', (req, res) => {
   const requestId = req.params.id;

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const clientsRouter = require('./routes/clients');
@@ -10,6 +10,7 @@ const tasksRouter = require('./routes/tasks');
 const projectsRouter = require('./routes/projects');
 const rolesRouter = require('./routes/roles');
 const authRouter = require('./routes/auth/auth');
+const passport = require('./routes/auth/passport');
 
 const api_path = '/api/v1';
 
@@ -27,8 +28,26 @@ app.use(cors());
 //   res.header(
 //     'Access-Control-Allow-Headers',
 //     'Origin, X-Requested-With, Content-Type, Accept',
+//     'Access-Control-Request-Headers: Content-Type, Authorization',
+//   );
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.setHeader('Access-Control-Allow-Credentials', 'true');
+//   res.setHeader(
+//     'Access-Control-Allow-Methods',
+//     'GET,HEAD,OPTIONS,POST,PUT,DELETE',
+//   );
+//   res.setHeader(
+//     'Access-Control-Allow-Headers',
+//     'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
 //   );
 //   next();
+// });
+
+// app.get('/', passport.authenticate('jwt', {session: false}), function(
+//   req,
+//   res,
+// ) {
+//   res.send(req.user);
 // });
 
 app.get('/', (req, res, next) => {

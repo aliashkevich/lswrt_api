@@ -10,8 +10,13 @@ router.post('/login', function(req, res) {
     if (!user) res.status(401).json({flash: info.message});
     if (user) {
       var data = {
+        id: user.id,
         email: user.email,
         name: user.name,
+        image: user.image,
+        clientId: user.clientId,
+        projectId: user.projectId,
+        roleId: user.roleId,
       };
 
       const token = jwt.sign(data, 'your_jwt_secret');
