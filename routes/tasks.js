@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const tasks = require('../data/tasks.json');
+const passport = require('./auth/passport');
 
 router.get('/', function(req, res, next) {
   res.json({
