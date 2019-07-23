@@ -21,6 +21,7 @@ router.post('/login', function(req, res) {
   })(req, res);
 });
 
+// Use this code in case you need to add new user
 // router.post('/signup', function(req, res, next) {
 //   const args = {
 //     email: req.body.email,
