@@ -9,6 +9,7 @@ const usersRouter = require('./routes/users');
 const tasksRouter = require('./routes/tasks');
 const projectsRouter = require('./routes/projects');
 const rolesRouter = require('./routes/roles');
+const authRouter = require('./routes/auth/auth');
 
 const api_path = '/api/v1';
 
@@ -18,13 +19,13 @@ app.use(
     extended: true,
   }),
 );
-
 app.use(cors());
 
 app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.use(api_path + '/auth', authRouter);
 app.use(api_path + '/users', usersRouter);
 app.use(api_path + '/clients', clientsRouter);
 app.use(api_path + '/projects', projectsRouter);
