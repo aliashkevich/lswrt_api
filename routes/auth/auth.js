@@ -15,7 +15,7 @@ router.post('/login', function(req, res) {
       };
 
       const token = jwt.sign(data, 'your_jwt_secret');
-      const flash = 'Sucessful login!';
+      const flash = 'Successfully logged in!';
       return res.status(200).json({data, token, flash});
     }
   })(req, res);
