@@ -26,14 +26,13 @@ router.post('/login', function(req, res) {
   })(req, res);
 });
 
-router.post('/signup', function(req, res, next) {
-  const args = {
-    email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10)),
-    name: req.body.name,
-    lastname: req.body.lastname,
-  };
-  console.log(args.password);
-});
+// router.post('/signup', function(req, res, next) {
+//   const args = {
+//     email: req.body.email,
+//     password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10)),
+//     name: req.body.name,
+//     lastname: req.body.lastname,
+//   };
+// });
 
 module.exports = router;

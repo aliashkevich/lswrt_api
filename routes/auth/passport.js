@@ -14,11 +14,11 @@ passport.use(
     },
     function(email, password, cb) {
       let user = users.find(user => user.email === email);
-      if (user === undefined) cb(null, false, {message: 'Incorrect email.'});
+      if (user === undefined)
+        cb(null, false, {message: 'Incorrect email or password.'});
       else if (!bcrypt.compareSync(password, user.password))
-        cb(null, false, {message: 'Incorrect password.'});
-      else if (bcrypt.compareSync(password, user.password))
-        cb(null, user, 'TEST');
+        cb(null, false, {message: 'Incorrect email or password.'});
+      else if (bcrypt.compareSync(password, user.password)) cb(null, user);
       else cb(null, false, {message: 'Incorrect email or password.'});
     },
   ),

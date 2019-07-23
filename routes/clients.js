@@ -20,18 +20,22 @@ router.get('/:id', function(req, res, next) {
   }
 });
 
-router.post('/', (req, res, next) => {
-  const newClientId = clients[clients.length - 1].id + 1;
-  const clientData = {
-    id: newClientId,
-    name: req.body.name,
-    initials: req.body.initials,
-    contactInformation: req.body.contactInformation,
-    logo: req.body.logo,
-  };
-  clients.push(clientData);
-  res.json({clients});
-});
+router.post(
+  '/',
+  passport.authenticate('jwt', {session: false}),
+  (req, res, next) => {
+    const newClientId = clients[clients.length - 1].id + 1;
+    const clientData = {
+      id: newClientId,
+      name: req.body.name,
+      initials: req.body.initials,
+      contactInformation: req.body.contactInformation,
+      logo: req.body.logo,
+    };
+    clients.push(clientData);
+    res.json({clients});
+  },
+);
 
 router.delete(
   '/:id',
@@ -55,17 +59,21 @@ router.delete(
   },
 );
 
-router.put('/:id', (req, res) => {
-  const requestId = req.params.id;
-  const client = clients.find(client => client.id == req.params.id);
-  client.name = req.body.name;
-  client.initials = req.body.initials;
-  client.contactInformation = req.body.contactInformation;
-  if (client === undefined) {
-    res.send(`There is no client with id '${requestId}'`).status(404);
-  } else {
-    res.send(client);
-  }
-});
+router.put(
+  '/:id',
+  passport.authenticate('jwt', {session: false}),
+  (req, res) => {
+    const requestId = req.params.id;
+    const client = clients.find(client => client.id == req.params.id);
+    client.name = req.body.name;
+    client.initials = req.body.initials;
+    client.contactInformation = req.body.contactInformation;
+    if (client === undefined) {
+      res.send(`There is no client with id '${requestId}'`).status(404);
+    } else {
+      res.send(client);
+    }
+  },
+);
 
 module.exports = router;
