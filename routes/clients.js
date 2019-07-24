@@ -3,6 +3,7 @@ const router = express.Router();
 const clients = require('../data/clients.json');
 const projects = require('../data/projects.json');
 const users = require('../data/users.json');
+const passport = require('./auth/passport');
 
 router.get('/', function(req, res, next) {
   res.json({
@@ -55,6 +56,7 @@ router.put('/:id', (req, res) => {
   client.name = req.body.name;
   client.initials = req.body.initials;
   client.contactInformation = req.body.contactInformation;
+  client.logo = req.body.logo;
   if (client === undefined) {
     res.send(`There is no client with id '${requestId}'`).status(404);
   } else {

@@ -9,7 +9,8 @@ const usersRouter = require('./routes/users');
 const tasksRouter = require('./routes/tasks');
 const projectsRouter = require('./routes/projects');
 const rolesRouter = require('./routes/roles');
-
+const authRouter = require('./routes/auth/auth');
+const passport = require('./routes/auth/passport');
 const api_path = '/api/v1';
 
 app.use(bodyParser.json());
@@ -18,18 +19,38 @@ app.use(
     extended: true,
   }),
 );
-
 app.use(cors());
 
 app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.use(api_path + '/users', usersRouter);
-app.use(api_path + '/clients', clientsRouter);
-app.use(api_path + '/projects', projectsRouter);
-app.use(api_path + '/tasks', tasksRouter);
-app.use(api_path + '/roles', rolesRouter);
+app.use(api_path + '/auth', authRouter);
+app.use(
+  api_path + '/users',
+  passport.authenticate('jwt', {session: false}),
+  usersRouter,
+);
+app.use(
+  api_path + '/clients',
+  passport.authenticate('jwt', {session: false}),
+  clientsRouter,
+);
+app.use(
+  api_path + '/projects',
+  passport.authenticate('jwt', {session: false}),
+  projectsRouter,
+);
+app.use(
+  api_path + '/tasks',
+  passport.authenticate('jwt', {session: false}),
+  tasksRouter,
+);
+app.use(
+  api_path + '/roles',
+  passport.authenticate('jwt', {session: false}),
+  rolesRouter,
+);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
