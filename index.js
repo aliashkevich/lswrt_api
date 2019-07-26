@@ -13,9 +13,10 @@ const authRouter = require('./routes/auth/auth');
 const passport = require('./routes/auth/passport');
 const api_path = '/api/v1';
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '3mb'}));
 app.use(
   bodyParser.urlencoded({
+    limit: '3mb',
     extended: true,
   }),
 );
